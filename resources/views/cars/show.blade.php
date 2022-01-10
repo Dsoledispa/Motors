@@ -13,6 +13,12 @@
       <li>Make: {{ $cars->make }}</li>
       <li>Model: {{ $cars->model }}</li>
       <li>Produced on: {{ $cars->produced_on }}</li>
+      <li><form action="{{url('/cars/'.$cars->id)}}" method="post">
+        {{csrf_field()}}
+        <!-- @csrf -->
+        {{method_field('DELETE')}}
+        <input type="submit" value="BORRAR">
+    </form></li>
     </ul>  
     @empty
         <h1>Esta vacio!</h1>
